@@ -7,7 +7,7 @@
       name="description"
       content="Les Paniers du Mont-Gargan : AMAP locale, produits paysans, fonctionnement et adhésion."
     />
-    <title>Les Paniers du Mont-Gargan</title>
+    <title>Les Paniers du Mont-Gargan - AMAP</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,30 +15,31 @@
 
     <header class="site-header" role="banner">
       <h1>Les Paniers du Mont-Gargan</h1>
-      <p>Association pour le maintien d'une agriculture paysanne</p>
+      <p>Association pour le Maintien d'une Agriculture Paysanne</p>
     </header>
 
     <nav aria-label="Navigation principale" class="main-nav">
       <ul>
         <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#provenance">Provenance des produits</a></li>
-        <li><a href="#histoire">Histoire de l'AMAP</a></li>
+        <li><a href="#provenance">Provenance</a></li>
+        <li><a href="#histoire">Histoire</a></li>
         <li><a href="#fonctionnement">Fonctionnement</a></li>
-        <li><a href="#adhesion">Adhésion</a></li>
-        <li><a href="#documents">Documents PDF</a></li>
+        <li class="adhesion-nav-btn"><a href="#adhesion">Adhésion</a></li>
       </ul>
     </nav>
 
     <main id="contenu-principal" tabindex="-1">
       <section id="accueil" aria-labelledby="titre-accueil">
+        <span class="section-tag">Bienvenue</span>
         <h2 id="titre-accueil">Accueil</h2>
         <p>
-          Bienvenue sur le site de l'AMAP Les Paniers du Mont-Gargan. Notre objectif est de rapprocher
-          producteurs locaux et adhérents grâce à des paniers de saison, frais et responsables.
+          Bienvenue sur le site de l'AMAP <strong>Les Paniers du Mont-Gargan</strong>. Notre objectif est de rapprocher
+          producteurs locaux et adhérents grâce à des paniers de saison, frais, bios et responsables.
         </p>
       </section>
 
       <section id="provenance" aria-labelledby="titre-provenance">
+        <span class="section-tag">Nos Producteurs</span>
         <h2 id="titre-provenance">Provenance des produits</h2>
         <p>
           Les produits proviennent de fermes partenaires situées en priorité dans un rayon local. Nous
@@ -47,6 +48,7 @@
       </section>
 
       <section id="histoire" aria-labelledby="titre-histoire">
+        <span class="section-tag">Notre Engagement</span>
         <h2 id="titre-histoire">Histoire de l'AMAP</h2>
         <p>
           L'association est née d'un collectif d'habitants souhaitant soutenir une agriculture paysanne
@@ -55,6 +57,7 @@
       </section>
 
       <section id="fonctionnement" aria-labelledby="titre-fonctionnement">
+        <span class="section-tag">Au Quotidien</span>
         <h2 id="titre-fonctionnement">Fonctionnement</h2>
         <p>
           Les paniers sont distribués à date fixe. Les adhérents s'engagent sur une période définie et
@@ -63,41 +66,43 @@
       </section>
 
       <section id="adhesion" aria-labelledby="titre-adhesion">
+        <span class="section-tag">Nous Rejoindre</span>
         <h2 id="titre-adhesion">Adhésion</h2>
         <p>
-          Pour rejoindre l'AMAP, consultez la charte, la notice et le formulaire d'adhésion disponibles
-          ci-dessous. Vous pouvez ensuite nous contacter pour finaliser votre inscription.
+          Pour rejoindre l'AMAP, consultez la charte, le contrat et le document joker ci-dessous.
+          Vous pouvez ensuite nous contacter pour finaliser votre inscription.
         </p>
-        <a class="cta" href="#documents">Accéder aux documents d'adhésion</a>
-      </section>
-
-      <section id="documents" aria-labelledby="titre-documents">
-        <h2 id="titre-documents">Documents PDF à télécharger</h2>
+        <h3 class="subsection-title">Documents PDF à télécharger</h3>
         <ul class="downloads" aria-label="Liste des documents à télécharger">
           <li>
             <a href="/documents/Charte_des_AMAP.pdf" target="_blank" rel="noopener noreferrer"
-              >Charte des AMAP (PDF)</a
+              >📄 Charte des AMAP (PDF)</a
             >
           </li>
           <li>
             <a href="/documents/Contrat_Amapien_Les_paniers_du_Mont_Gargan.pdf" target="_blank" rel="noopener noreferrer"
-              >Contrat Amapien Les Paniers du Mont Gargan (PDF)</a
+              >📄 Contrat Amapien Les Paniers du Mont Gargan (PDF)</a
             >
           </li>
           <li>
             <a href="/documents/Avenant_N_1_contrat_Amap.pdf" target="_blank" rel="noopener noreferrer"
-              >Système de joker (PDF)</a
+              >📄 Système de joker (PDF)</a
             >
           </li>
         </ul>
       </section>
     </main>
 
-    <footer>
-      <p>
-        <span id="annee-courante"></span> · Les Paniers du Mont-Gargan
-        <a href="mentions-legales.html">Mentions légales et confidentialité</a>
-      </p>
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-content">
+        <p>
+          &copy; <span id="annee-courante"></span> · <strong>Les Paniers du Mont-Gargan</strong><br />
+          <a href="mentions-legales.html">Mentions légales et politique de confidentialité</a>
+        </p>
+        <div class="credits">
+          Design inspiré du modèle <em>FarmFresh</em> conçu par <a href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a> et distribué par <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer">ThemeWagon</a>[cite: 5, 6].
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>

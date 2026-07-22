@@ -15,7 +15,7 @@
 
     <header class="site-header" role="banner">
       <h1>Les Paniers du Mont-Gargan</h1>
-      <p>Association pour le maintien d'une agriculture paysanne</p>
+      <p>Association pour le Maintien d'une Agriculture Paysanne au Mont Gargan</p>
     </header>
 
     <nav aria-label="Navigation principale" class="main-nav">
@@ -26,21 +26,22 @@
 
     <main id="contenu-principal" tabindex="-1">
       <section aria-labelledby="titre-mentions">
+        <span class="section-tag">Informations Légales</span>
         <h2 id="titre-mentions">Mentions Légales</h2>
 
         <h3>1. Éditeur du site</h3>
         <p>
           Le présent site est édité par l'association <strong>Les Paniers du Mont-Gargan</strong> (AMAP).<br />
           <strong>Statut :</strong> Association loi 1901<br />
-          <strong>Adresse :</strong> [Adresse ou Siège social de l'AMAP, ex: Rouen]<br />
-          <strong>Adresse e-mail :</strong> amaplespaniersdumontgargan@gmail.com <br />
+          <strong>Adresse :</strong> [Adresse / Siège social de l'AMAP, ex: Rouen]<br />
+          <strong>Adresse e-mail :</strong> [contact@domaine-amap.fr]<br />
           <strong>Directeur de la publication :</strong> Le Président / La Présidente de l'association.
         </p>
 
         <h3>2. Hébergement</h3>
         <p>
           Le site est hébergé dans un environnement conteneurisé sécurisé (LXC).<br />
-          <strong>Hébergeur d'infrastructure / Serveur :</strong> Auto-hébergé sur réseau privé.
+          <strong>Hébergeur d'infrastructure :</strong> [Indiquez le nom de votre hébergeur VPS/Serveur, ex: OVH, Scaleway, etc.].
         </p>
 
         <h3>3. Propriété intellectuelle</h3>
@@ -50,6 +51,7 @@
       </section>
 
       <section aria-labelledby="titre-confidentialite">
+        <span class="section-tag">Données Personnelles</span>
         <h2 id="titre-confidentialite">Politique de Confidentialité (RGPD)</h2>
 
         <h3>1. Traitement des données personnelles</h3>
@@ -62,22 +64,20 @@
 
         <h3>2. Cookies et statistiques</h3>
         <p>
-          Ce site n'utilise aucun cookie publicitaire ni traqueur tiers nécessitant le recueil de votre consentement. Seuls des journaux techniques de connexion (logs système incluant l'adresse IP) peuvent être conservés de façon temporaire pour des raisons de sécurité et de maintenance du serveur.
+          Ce site n'utilise aucun cookie publicitaire ni traqueur tiers nécessitant le recueil de votre consentement. Seuls des journaux techniques de connexion (logs système) peuvent être conservés de façon temporaire pour des raisons de sécurité et de maintenance.
         </p>
 
         <h3>3. Vos droits</h3>
         <p>
-          Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des informations vous concernant. Pour exercer ce droit, il vous suffit de nous adresser un message électronique à l'adresse : <strong>amaplespaniersdumontgargan@gmail.com</strong>.
+          Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification et de suppression des informations vous concernant. Pour exercer ce droit, écrivez-nous à : <strong>[contact@domaine-amap.fr]</strong>.
         </p>
       </section>
 
       <section aria-labelledby="titre-cgu">
+        <span class="section-tag">Règles d'utilisation</span>
         <h2 id="titre-cgu">Conditions Générales d'Utilisation (CGU)</h2>
         <p>
-          L'utilisation du site implique l'acceptation des règles de bonne conduite et de courtoisie. L'association met tout en œuvre pour diffuser des informations précises et à jour concernant le fonctionnement de l'AMAP et les documents d'adhésion.
-        </p>
-        <p>
-          Les documents téléchargeables (Charte des AMAP, Contrat Amapien, Système de joker) sont fournis au format PDF pour l'information des futurs et anciens adhérents.
+          L'utilisation du site implique l'acceptation des règles de bonne conduite. L'association met tout en œuvre pour diffuser des informations précises et à jour concernant le fonctionnement de l'AMAP et les documents d'adhésion.
         </p>
       </section>
 
@@ -86,11 +86,16 @@
       </p>
     </main>
 
-    <footer>
-      <p>
-        <span id="annee-courante"></span> · Les Paniers du Mont-Gargan · Site accessible et conçu pour une
-        lecture simple. · <a href="mentions-legales.html">Mentions légales et confidentialité</a>
-      </p>
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-content">
+        <p>
+          &copy; <span id="annee-courante"></span> · <strong>Les Paniers du Mont-Gargan</strong><br />
+          <a href="mentions-legales.html">Mentions légales et politique de confidentialité</a>
+        </p>
+        <div class="credits">
+          Design inspiré du modèle <em>FarmFresh</em> conçu par <a href="https://htmlcodex.com" target="_blank" rel="noopener noreferrer">HTML Codex</a> et distribué par <a href="https://themewagon.com" target="_blank" rel="noopener noreferrer">ThemeWagon</a>.
+        </div>
+      </div>
     </footer>
 
     <script src="script.js"></script>

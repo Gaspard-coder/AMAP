@@ -1,10 +1,17 @@
+/* ==========================================================================
+   Thème : Les Paniers du Mont-Gargan (Inspiré de FarmFresh par HTML Codex)
+   ========================================================================== */
+
 :root {
-  color-scheme: light;
-  --background: #ffffff;
-  --text: #111111;
-  --primary: #004085;
-  --primary-contrast: #ffffff;
-  --border: #2a2a2a;
+  --primary: #2E7D32;       /* Vert champêtre haut contraste (WCAG AAA) */
+  --primary-light: #34AD54; /* Vert FarmFresh */
+  --secondary: #E65100;     /* Orange chaleureux */
+  --secondary-light: #FF8F00;
+  --dark: #1E252B;          /* Fond sombre footer */
+  --light-bg: #F4F7F4;      /* Fond de page légèrement teinté */
+  --card-bg: #FFFFFF;
+  --text: #1C2321;          /* Texte sombre très lisible */
+  --border: #C8D6C9;
 }
 
 * {
@@ -12,7 +19,7 @@
 }
 
 html {
-  font-size: 112.5%;
+  font-size: 112.5%; /* Base à 18px pour une excellente lisibilité */
 }
 
 body {
@@ -20,100 +27,243 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.7;
   color: var(--text);
-  background: var(--background);
+  background-color: var(--light-bg);
 }
 
+/* Liens d'évitement pour l'accessibilité */
 .skip-link {
   position: absolute;
   left: 0;
-  top: -40px;
-  background: var(--primary);
-  color: var(--primary-contrast);
-  padding: 0.75rem 1rem;
+  top: -60px;
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 0.8rem 1.2rem;
+  font-weight: bold;
   z-index: 1000;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
 }
 
 .skip-link:focus {
   top: 0;
 }
 
-.site-header,
-.main-nav,
-main,
-footer {
-  max-width: 60rem;
-  margin: 0 auto;
-  padding: 1rem;
+/* En-tête principal */
+.site-header {
+  background-color: var(--primary);
+  background: linear-gradient(135deg, #1b5e20 0%, #34ad54 100%);
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-bottom: 5px solid var(--secondary);
 }
 
 .site-header h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
 }
 
 .site-header p {
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   margin-top: 0.5rem;
+  color: #E8F5E9;
+}
+
+/* Barre de navigation */
+.main-nav {
+  background-color: var(--dark);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav ul {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
+  padding: 0.5rem;
+  margin: 0 auto;
+  max-width: 65rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
 }
 
-.main-nav a,
-.cta,
-.downloads a {
+.main-nav a {
   display: inline-block;
-  font-weight: 700;
+  font-weight: bold;
   text-decoration: none;
-  border: 2px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 0.75rem 1rem;
-  color: var(--text);
-  background: #f6f6f6;
+  padding: 0.75rem 1.15rem;
+  color: #ffffff;
+  background-color: transparent;
+  border-radius: 0.4rem;
+  transition: background-color 0.2s;
 }
 
 .main-nav a:hover,
-.main-nav a:focus,
-.cta:hover,
-.cta:focus,
-.downloads a:hover,
-.downloads a:focus {
-  outline: 3px solid var(--primary);
-  outline-offset: 2px;
+.main-nav a:focus {
+  background-color: var(--primary-light);
+  color: #ffffff;
+  outline: 3px solid var(--secondary);
 }
 
+.main-nav .adhesion-nav-btn a {
+  background-color: #c63f00; /* Couleur orange spécifiée */
+  color: #ffffff;
+}
+
+.main-nav .adhesion-nav-btn a:hover,
+.main-nav .adhesion-nav-btn a:focus {
+  background-color: var(--secondary);
+  outline: 3px solid var(--primary);
+}
+
+/* Zone principale de contenu */
+main {
+  max-width: 65rem;
+  margin: 2.5rem auto;
+  padding: 0 1rem;
+}
+
+/* Style des cartes de sections */
 section {
-  border: 1px solid #d8d8d8;
-  border-radius: 0.5rem;
-  margin: 1rem 0;
-  padding: 1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--primary);
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.section-tag {
+  display: inline-block;
+  text-transform: uppercase;
+  color: var(--primary-light);
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
 }
 
 h2 {
   margin-top: 0;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  color: var(--primary);
 }
 
+h3 {
+  font-size: 1.35rem;
+  color: var(--dark);
+  margin-top: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+/* Boutons d'action */
+.cta {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.15rem;
+  text-decoration: none;
+  background-color: var(--secondary);
+  color: #ffffff;
+  padding: 0.85rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s;
+}
+
+.cta:hover,
+.cta:focus {
+  background-color: #c63f00;
+  color: #ffffff;
+  outline: 3px solid var(--primary);
+}
+
+/* Zone de téléchargement des PDF */
 .downloads {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 1.25rem;
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-footer {
-  border-top: 2px solid var(--border);
+.downloads a {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: var(--primary);
+  background-color: #E8F5E9;
+  border: 2px solid var(--primary-light);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  transition: all 0.2s;
+}
+
+.downloads a:hover,
+.downloads a:focus {
+  background-color: var(--primary);
+  color: #ffffff;
+  outline: 3px solid var(--secondary);
+}
+
+/* Pied de page (Footer) */
+.site-footer {
+  background-color: var(--dark);
+  color: #ffffff;
+  margin-top: 4rem;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+  border-top: 5px solid var(--primary-light);
+}
+
+.footer-content {
+  max-width: 65rem;
+  margin: 0 auto;
+  text-align: center;
   font-size: 1rem;
 }
 
-@media (min-width: 48rem) {
+.footer-content a {
+  color: var(--secondary-light);
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.footer-content a:hover,
+.footer-content a:focus {
+  color: #ffffff;
+}
+
+/* Crédits de licence HTML Codex & ThemeWagon */
+.credits {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #343a40;
+  font-size: 0.85rem;
+  color: #adb5bd;
+}
+
+.credits a {
+  color: #26a69a;
+  text-decoration: none;
+}
+
+.credits a:hover,
+.credits a:focus {
+  text-decoration: underline;
+}
+
+@media (max-width: 48rem) {
   .main-nav ul {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-direction: column;
   }
 }
