@@ -1,0 +1,23 @@
+{
+  "name": "les-paniers-du-mont-gargan",
+  "version": "1.0.0",
+  "description": "Application web AMAP accessible et sécurisée",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "amap",
+    "accessibility",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "2.8.6",
+    "express": "5.2.1",
+    "express-rate-limit": "8.6.0",
+    "helmet": "8.3.0"
+  }
+}

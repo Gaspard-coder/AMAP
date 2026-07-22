@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+  --background: #ffffff;
+  --text: #111111;
+  --primary: #004085;
+  --primary-contrast: #ffffff;
+  --border: #2a2a2a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 112.5%;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--background);
+}
+
+.skip-link {
+  position: absolute;
+  left: 0;
+  top: -40px;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  padding: 0.75rem 1rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+.site-header,
+.main-nav,
+main,
+footer {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.site-header p {
+  font-size: 1.15rem;
+  margin-top: 0.5rem;
+}
+
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.main-nav a,
+.cta,
+.downloads a {
+  display: inline-block;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  background: #f6f6f6;
+}
+
+.main-nav a:hover,
+.main-nav a:focus,
+.cta:hover,
+.cta:focus,
+.downloads a:hover,
+.downloads a:focus {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+section {
+  border: 1px solid #d8d8d8;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.downloads {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+footer {
+  border-top: 2px solid var(--border);
+  font-size: 1rem;
+}
+
+@media (min-width: 48rem) {
+  .main-nav ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
