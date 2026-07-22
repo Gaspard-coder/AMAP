@@ -47,6 +47,68 @@ body {
 .skip-link:focus {
   top: 0;
 }
+/* Style du logo */
+.site-logo {
+  max-height: 200px; /* Définit la taille maximale pour qu'il ne soit pas trop grand */
+  width: auto;       /* Conserve les proportions de l'image */
+  position: absolute; /* Permet un positionnement précis par rapport au parent */
+  top: 1.65rem;         /* Espace depuis le haut de l'en-tête */
+  left: 9.2rem;         /* Espace depuis la gauche de l'en-tête */
+  transform: scaleX(-1);
+  /* Effet macaron */
+    border-radius: 50%; /* Cercle parfait */
+    background-color: #2E7D32;
+    //padding: 8px; /* Espace autour du dessin */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Ombre douce pour le détacher */
+    border: 3px solid var(--secondary); /* Fine bordure orange rappelant le thème */
+}
+
+/* Modification nécessaire du parent pour le positionnement du logo */
+.site-header {
+  position: relative; /* Indispensable pour que .site-logo soit positionné par rapport à cet en-tête */
+  /* Conservez vos autres propriétés existantes pour .site-header ci-dessous */
+  background-color: var(--primary);
+  background: linear-gradient(135deg, #1b5e20 0%, #34ad54 100%);
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  border-bottom: 5px solid var(--secondary);
+}
+/* Styles pour l'encart de contact */
+.contact-info {
+  position: relative; /* Changé de absolute à relative pour un flux normal */
+  margin: 1rem auto; /* Centré horizontalement avec une marge au-dessus */
+  width: 80%; /* Ajuster si nécessaire */
+  max-width: 1000px; /* Limite la largeur maximale pour un bon centrage */
+  background-color: rgba(255,143,0, 0.8);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  text-align: center; /* Centrer le texte à l'intérieur de l'encart */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info p {
+  margin: 0.2rem 0;
+}
+
+.contact-info strong {
+  color: var(--dark);
+}
+
+/* Media queries pour la réactivité */
+@media (max-width: 768px) { /* Pour les tablettes et téléphones */
+  .contact-info {
+    /* Les styles de base (margin, width, max-width, text-align) devraient déjà bien fonctionner */
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+  .site-header {
+    padding-bottom: 4rem; /* Réduction de l'espace pour éviter le chevauchement */
+  }
+}
 
 /* En-tête principal */
 .site-header {
@@ -125,6 +187,7 @@ main {
   max-width: 65rem;
   margin: 2.5rem auto;
   padding: 0 1rem;
+  scroll-padding-top: 18rem; /* Ajouté pour le centrage des sections par rapport à la nav fixe */
 }
 
 /* Style des cartes de sections */
@@ -136,6 +199,7 @@ section {
   margin-bottom: 2rem;
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: 18rem; /* Ajouté pour le centrage des sections */
 }
 
 .section-tag {
