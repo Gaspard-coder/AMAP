@@ -28,6 +28,7 @@ body {
   line-height: 1.7;
   color: var(--text);
   background-color: var(--light-bg);
+  overflow-wrap: anywhere; /* Empêche les e-mails et liens longs de dépasser de l'écran */
 }
 
 /* Liens d'évitement pour l'accessibilité */
@@ -47,6 +48,7 @@ body {
 .skip-link:focus {
   top: 0;
 }
+
 /* Style du logo */
 .site-logo {
   max-height: 200px; /* Définit la taille maximale pour qu'il ne soit pas trop grand */
@@ -56,62 +58,15 @@ body {
   left: 9.2rem;         /* Espace depuis la gauche de l'en-tête */
   transform: scaleX(-1);
   /* Effet macaron */
-    border-radius: 50%; /* Cercle parfait */
-    background-color: #2E7D32;
-    //padding: 8px; /* Espace autour du dessin */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Ombre douce pour le détacher */
-    border: 3px solid var(--secondary); /* Fine bordure orange rappelant le thème */
-}
-
-/* Modification nécessaire du parent pour le positionnement du logo */
-.site-header {
-  position: relative; /* Indispensable pour que .site-logo soit positionné par rapport à cet en-tête */
-  /* Conservez vos autres propriétés existantes pour .site-header ci-dessous */
-  background-color: var(--primary);
-  background: linear-gradient(135deg, #1b5e20 0%, #34ad54 100%);
-  color: #ffffff;
-  padding: 3rem 1.5rem;
-  text-align: center;
-  border-bottom: 5px solid var(--secondary);
-}
-/* Styles pour l'encart de contact */
-.contact-info {
-  position: relative; /* Changé de absolute à relative pour un flux normal */
-  margin: 1rem auto; /* Centré horizontalement avec une marge au-dessus */
-  width: 80%; /* Ajuster si nécessaire */
-  max-width: 1000px; /* Limite la largeur maximale pour un bon centrage */
-  background-color: rgba(255,143,0, 0.8);
-  padding: 0.75rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--border);
-  font-size: 0.85rem;
-  line-height: 1.3;
-  text-align: center; /* Centrer le texte à l'intérieur de l'encart */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info p {
-  margin: 0.2rem 0;
-}
-
-.contact-info strong {
-  color: var(--dark);
-}
-
-/* Media queries pour la réactivité */
-@media (max-width: 768px) { /* Pour les tablettes et téléphones */
-  .contact-info {
-    /* Les styles de base (margin, width, max-width, text-align) devraient déjà bien fonctionner */
-    padding: 0.6rem;
-    font-size: 0.8rem;
-  }
-  .site-header {
-    padding-bottom: 4rem; /* Réduction de l'espace pour éviter le chevauchement */
-  }
+  border-radius: 50%; /* Cercle parfait */
+  background-color: #2E7D32;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25); /* Ombre douce pour le détacher */
+  border: 3px solid var(--secondary); /* Fine bordure orange rappelant le thème */
 }
 
 /* En-tête principal */
 .site-header {
+  position: relative; /* Indispensable pour que .site-logo soit positionné par rapport à cet en-tête */
   background-color: var(--primary);
   background: linear-gradient(135deg, #1b5e20 0%, #34ad54 100%);
   color: #ffffff;
@@ -131,6 +86,31 @@ body {
   font-size: 1.25rem;
   margin-top: 0.5rem;
   color: #E8F5E9;
+}
+
+/* Styles pour l'encart de contact */
+.contact-info {
+  position: relative; /* Changé de absolute à relative pour un flux normal */
+  margin: 1rem auto; /* Centré horizontalement avec une marge au-dessus */
+  width: 80%; /* Ajuster si nécessaire */
+  max-width: 1000px; /* Limite la largeur maximale pour un bon centrage */
+  background-color: rgba(255,143,0, 0.8);
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  font-size: 0.85rem;
+  line-height: 1.3;
+  text-align: center; /* Centrer le texte à l'intérieur de l'encart */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow-wrap: anywhere; /* Permet de couper l'email proprement s'il est trop long */
+}
+
+.contact-info p {
+  margin: 0.2rem 0;
+}
+
+.contact-info strong {
+  color: var(--dark);
 }
 
 /* Barre de navigation */
@@ -326,8 +306,74 @@ p {
   text-decoration: underline;
 }
 
+/* ==========================================================================
+   MÉDIA QUERIES - RÉACTIVITÉ (TABLETTES ET TÉLÉPHONES)
+   ========================================================================== */
+
+/* Pour les écrans de taille moyenne (petits ordinateurs portables, tablettes en mode paysage) */
+@media (max-width: 1024px) {
+  .site-logo {
+    /* On retire le positionnement absolu pour intégrer le logo naturellement au flux */
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: 0 auto 1.5rem auto;
+    display: block;
+    max-height: 150px;
+  }
+}
+
+/* Pour les tablettes et smartphones */
+@media (max-width: 768px) {
+  .site-header {
+    padding: 2rem 1rem; /* On réduit le padding géant de la version PC */
+  }
+
+  .site-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .site-header p {
+    font-size: 1.1rem;
+  }
+
+  .contact-info {
+    width: 95%; /* Prend plus de largeur sur mobile */
+    padding: 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  section {
+    padding: 1.2rem;
+  }
+
+  .downloads a {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Pour ajuster la barre de navigation sur les écrans fins (téléphones) */
 @media (max-width: 48rem) {
+  .main-nav {
+    position: static; /* Annule le menu collant : il défile désormais naturellement avec la page */
+  }
+
   .main-nav ul {
-    flex-direction: column;
+    flex-direction: column; /* Alignement vertical des liens */
+  }
+
+  .main-nav a {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Le menu ne reste plus en haut, on remet une marge d'ancrage classique */
+  main {
+    scroll-padding-top: 1.5rem;
+  }
+
+  section {
+    scroll-margin-top: 1.5rem;
   }
 }
