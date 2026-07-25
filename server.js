@@ -11,6 +11,7 @@ const PUBLIC_DIR = path.join(__dirname, 'public');
 const DOCUMENTS_DIR = path.join(__dirname, 'documents');
 const SAFE_FILE_PATTERN = /^[a-zA-Z0-9._-]+\.pdf$/;
 
+app.set('trust proxy', 1);
 app.disable('x-powered-by');
 
 app.use(helmet());
