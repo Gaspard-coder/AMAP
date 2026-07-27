@@ -6,7 +6,7 @@ const path = require('path');
 const fs = require('fs');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 80 ;
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const DOCUMENTS_DIR = path.join(__dirname, 'documents');
 const SAFE_FILE_PATTERN = /^[a-zA-Z0-9._-]+\.pdf$/;
